@@ -1,0 +1,310 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+:root {
+  --main-bg: #0d0d0d;
+  --accent-color: #007bff;
+  --text-color: #ffffff;
+  --secondary-color: #1a1a1a;
+  --highlight: #00bfff;
+  --font-family: Poppins;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  padding-top: 70px; /* Ajusta según la altura de tu navbar */
+}
+
+header.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: radial-gradient(circle at top left, #001f3f, #000000);
+  animation: fadeIn 2s ease;
+}
+
+.logo {
+  width: 256px;
+  height: 256px; /* Igual al ancho */
+  object-fit: cover; /* Asegura que la imagen llene el contenedor sin deformarse */
+  border-radius: 50%; /* Círculo perfecto */
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+
+header.hero h1 {
+  font-size: 3rem;
+  color: var(--highlight);
+  margin-bottom: 10px;
+}
+
+header.hero p {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Barra de navegacion */
+
+.navbar {
+  background-color: #111;
+  padding: 15px 20px;
+  position: fixed;       /* Cambia de 'relative' a 'fixed' */
+  top: 0;                /* Asegura que esté en la parte superior */
+  left: 0;
+  width: 100%;           /* Que abarque todo el ancho */
+  z-index: 1000;         /* Para que esté por encima de otros elementos */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Estilo del icono de menú */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #00bfff;
+  cursor: pointer;
+}
+
+/* Enlace del menú */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* Estilos para los enlaces */
+.nav-links li a {
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a {
+  color: #00bfff;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  background-color: #1b1b1b;
+}
+
+/* Responsive con animación */
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    background-color: #111;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  .menu-icon {
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    max-height: 300px; /* Altura suficiente para todos los enlaces */
+  }
+}
+
+/* ---------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.btn a:visited {
+  color: white;
+}
+
+.main-content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slideUp 1.5s ease;
+}
+
+.aboutus {
+  text-align: justify;
+  font-size: 18px;
+}
+
+.aboutus h4 {
+  color: var(--highlight);
+}
+
+.main-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.servicios a {
+  color: var(--accent-color);
+}
+
+.servicios a:hover {
+  color: var(--highlight);
+}
+
+.servicios ul {
+  list-style: none;
+  padding: 0;
+}
+
+.servicios ul li {
+  margin: 10px 0;
+}
+
+.servicios ul li a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.servicios ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.page-services a {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--highlight);
+}
+
+/*  */
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--highlight);
+  transform: scale(1.05);
+}
+
+
+/*  */
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2.2rem;
+  }
+
+  header.hero p {
+    font-size: 1.2rem;
+  }
+
+  .main-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
